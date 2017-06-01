@@ -2,7 +2,7 @@
 
 <html>
 <head>
-    <title>Django Girls blog</title>
+    <title>Myrthyll Blog</title>
     <link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext"
           rel="stylesheet" type="text/css">
     <link rel="stylesheet"
@@ -19,13 +19,13 @@
         <a href="{% url 'post_draft_list' %}" class="top-menu"><span
                 class="glyphicon glyphicon-edit"></span></a>
         <p class="top-menu">Hello {{ user.username }}
-            <small>(<a href="{% url 'logout' %}">Log out</a>)</small>
+            <small>(<a href="{% url 'logout' %}">Kilépés</a>)</small>
         </p>
     {% else %}
         <a href="{% url 'login' %}" class="top-menu"><span
                 class="glyphicon glyphicon-lock"></span></a>
     {% endif %}
-    <h1><a href="/">Django Girls Blog</a></h1>
+    <h1><a href="/">Myrthyll Blog</a></h1>
 </div>
 <div class="content	container">
     <div class="row">
@@ -39,7 +39,7 @@
                         <p>{{ comment.text|linebreaks }}</p>
                     </div>
                 {% empty %}
-                    <p>No comments here yet :(</p>
+                    <p>Nincs hozzászólás :(</p>
                 {% endfor %}
             {% endblock %}
         </div>
