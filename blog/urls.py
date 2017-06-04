@@ -1,4 +1,4 @@
-from    django.conf.urls import url
+from    django.conf.urls import url, include
 from . import views
 
 urlpatterns = [
@@ -16,4 +16,5 @@ urlpatterns = [
         name='comment_approve'),
     url(r'^comment/(?P<pk>\d+)/remove/$', views.comment_remove,
         name='comment_remove'),
+    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 ]

@@ -23,4 +23,5 @@ urlpatterns = [
     url(r'^accounts/logout/$', views.logout, name='logout',
         kwargs={'next_page': '/'}),
     url(r'', include('blog.urls')),
+    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 ]
