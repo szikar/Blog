@@ -1,12 +1,13 @@
 from    django.db import models
 from    django.utils import timezone
-from ckeditor.fields import RichTextField
-
+#from ckeditor.fields import RichTextField
+from django.forms import ModelForm
+from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 
 class Post(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200)
-    text = RichTextField()
+    text = models.TextField()
     created_date = models.DateTimeField(
         default=timezone.now)
     published_date = models.DateTimeField(
@@ -22,6 +23,13 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+class PostForm(ModelForm):
+    class Meta:
+        model = Post
+        fields = ('title', 'text',)
+        widgets = {
+            'text' : SummernoteWidget(),
+        }
 
 class Comment(models.Model):
     post = models.ForeignKey('blog.Post', related_name='comments')

@@ -16,5 +16,6 @@ urlpatterns = [
         name='comment_approve'),
     url(r'^comment/(?P<pk>\d+)/remove/$', views.comment_remove,
         name='comment_remove'),
-    url(r'^ckeditor/', include('ckeditor_uploader.urls')),
+    # url(r'^ckeditor/', include('ckeditor_uploader.urls')),
+    url(r'^summernote/', include('django_summernote.urls')),
 ]
